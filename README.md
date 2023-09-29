@@ -6,7 +6,7 @@
 
 ```
 VITE_NOMBRE_CARRERA: Nombre que aparecerá en el header.
-VITE_SLUG_CARRERA: Nombre de la carpeta donde está el plan. e.g.: 'informatica'.
+VITE_SLUG_CARRERA: Nombre de la carpeta donde está el plan. e.g.: 'informatica, industrial'.
 VITE_WEB_URL: Esquema y dominio de la URL.
 ```
 
