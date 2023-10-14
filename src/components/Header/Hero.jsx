@@ -19,8 +19,8 @@ function Hero() {
                 backgroundPosition: "center",
             }}
         >
-            <h1>Calculadora Plan 2023</h1>
-            <h2>{ NOMBRE_CARRERA }</h2>
+            <h2>Calculadora Plan 2023</h2>
+            <h1>{ NOMBRE_CARRERA }</h1>
         </Box>
     )
 }

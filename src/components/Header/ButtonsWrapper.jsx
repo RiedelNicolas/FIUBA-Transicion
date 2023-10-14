@@ -3,7 +3,7 @@ import React from 'react';
 import Button from './Button';
 
 function ButtonsWrapper(props) {
-    const {aprobarObligatorias, limpiar, compartir, readOnly} = props;
+    const {limpiar, compartir, readOnly} = props;
 
     return (
         <Box
@@ -18,10 +18,6 @@ function ButtonsWrapper(props) {
             />
             :
                 <>
-                    <Button
-                        text="Aprobar obligatorias"
-                        onClick={aprobarObligatorias}
-                    />
                     <Button
                         text="Limpiar todo"
                         onClick={limpiar}
