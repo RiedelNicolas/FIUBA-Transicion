@@ -29,7 +29,7 @@ function Materia23(props) {
         label={
           <>
             <Typography>{materia.nombre}</Typography>
-            <InfoIcon onClick={(e) => setPopoverAnchor(e.currentTarget)} sx={{marginLeft: "0.4em"}} />
+            <InfoIcon onClick={(e) => setPopoverAnchor(e.currentTarget)} sx={{marginLeft: "0.4em", color: "#7f7f7f"}} />
           </>
         }
       />
