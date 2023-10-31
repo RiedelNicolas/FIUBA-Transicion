@@ -199,7 +199,7 @@ function App() {
           <Grid item xs={12} md={4}>
             <Paper elevation={0} sx={{ padding: "3em", marginBottom: "2em" }}>
               <h3>Obligatorias aprobadas</h3>
-              <Button onClick={seleccionarTodasObligatorias86} sx={{marginBottom: "1em"}}>Marcar todas</Button>
+              {!readOnly ? <Button onClick={seleccionarTodasObligatorias86} sx={{marginBottom: "1em"}}>Marcar todas</Button> : null }
               <FormGroup>
                 {MATERIAS_PLAN_VIEJO.obligatorias.map((materia, idx) =>
                   <Materia86
@@ -238,7 +238,7 @@ function App() {
             <Paper elevation={0} sx={{ padding: "3em", marginBottom: "2em" }}>
               <h3>Créditos extra</h3>
               <ExtraCredits value={creditosExtra} setValue={setCreditosExtra} disabled={readOnly} />
-              <Typography variant='caption'>Agregá acá si tenés créditos extra obtenidos por fuera del plan.</Typography>
+              <Typography variant='caption'>Agregue aquí si tiene créditos extra obtenidos por fuera del plan.</Typography>
             </Paper>
           </Grid>
 
@@ -288,32 +288,6 @@ function App() {
                   null
               }
             </Paper>
-
-            {MIN_CREDITOS_CANJE && creditosTotales >= CREDITOS_ELECTIVAS_NUEVO + MIN_CREDITOS_CANJE ?
-              <Paper elevation={0} sx={{ padding: "3em", marginBottom: "2em" }}>
-                <h3>Canje por trayectoria académica</h3>
-                <Typography variant='caption'>Si ves esto es porque te sobran {MIN_CREDITOS_CANJE} o más créditos. En este caso, podés elegir alguna(s) de las siguientes materias para canjear por esos créditos.</Typography>
-                <FormGroup>
-                  {MATERIAS_PLAN_NUEVO.filter(m => m.canjeable).map(materia =>
-                    <Canje
-                      key={`${materia.nombre}-23-canje`}
-                      materia={materia}
-                      checked={materiasCanjeadas.includes(materia.nombre) || materias23.includes(materia.nombre)}
-                      aprobada={materias23.includes(materia.nombre)}
-                      disponible={
-                        (
-                          creditosTotales - creditosCanje - CREDITOS_ELECTIVAS_NUEVO >= materia.canjeable
-                          || materiasCanjeadas.includes(materia.nombre)
-                        ) && !readOnly
-                      }
-                      onCheck={(m) => setMateriasCanjeadas(materiasCanjeadas.concat(m.nombre))}
-                      onUncheck={(m) => setMateriasCanjeadas(materiasCanjeadas.filter(mat => mat !== m.nombre))}
-                    />
-                  )}
-                </FormGroup>
-              </Paper>
-              : null
-            }
           </Grid>
         </Grid>
       </Box>

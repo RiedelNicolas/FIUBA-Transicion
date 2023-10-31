@@ -30,7 +30,7 @@ function Materia86(props) {
     }
   };
 
-  const label = fakeClicked ? "Estas en modo lectura chinchulin!" : materia.nombre;
+  const label = fakeClicked ? "¡No se puede modificar en modo lectura!" : materia.nombre;
   
   return (
     <FormControlLabel

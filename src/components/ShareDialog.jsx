@@ -6,7 +6,7 @@ import { WEB_URL } from "../config";
 
 function ShareDialog({ open, onClose, codigo, creditos, canje }) {
   const [copied, setCopied] = useState(false);
-  const url = `${WEB_URL}?code=${codigo.toUpperCase()}&xcredits=${creditos}&canje=${canje.toUpperCase()}`;
+  const url = `${WEB_URL}?code=${codigo.toUpperCase()}&xcredits=${creditos}`;
 
   const handleCopy = async () => {
     try {
